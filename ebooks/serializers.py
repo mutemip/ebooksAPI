@@ -9,7 +9,7 @@ class ReviewSerializer(serializers.ModelSerializer):
 
 
 class EbookSerializer(serializers.ModelSerializer):
-    review = ReviewSerializer(many=True, read_only=True)  # to make relationship between the two serializers explicit
+    reviews = ReviewSerializer(many=True, read_only=True)  # to make relationship between the two serializers explicit
 
     class Meta:
         model = Ebook
