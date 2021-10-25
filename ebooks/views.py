@@ -2,8 +2,8 @@ from rest_framework import generics
 from rest_framework import permissions
 from rest_framework.exceptions import ValidationError
 from rest_framework.generics import get_object_or_404
-from .permissions import IsAdminUserOrReadOnly
 
+from .permissions import IsAdminUserOrReadOnly, IsReviewAuthorOrReadOnly
 from .models import Ebook, Reveiw
 from .serializers import EbookSerializer, ReviewSerializer
 
@@ -43,7 +43,7 @@ class ReviewCreateAPIView(generics.CreateAPIView):
 class ReviewDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Reveiw.objects.all()
     serializer_class = ReviewSerializer
-    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+    permission_classes = [IsReviewAuthorOrReadOnly]
 
 # class EbookListCreateAPIView(ListModelMixin, CreateModelMixin, GenericAPIView):
 #     queryset = Ebook.objects.all()
