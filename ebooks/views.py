@@ -5,14 +5,16 @@ from rest_framework.generics import get_object_or_404
 
 from .permissions import IsAdminUserOrReadOnly, IsReviewAuthorOrReadOnly
 from .models import Ebook, Reveiw
+from .pagination import CustomePagenation
 from .serializers import EbookSerializer, ReviewSerializer
 
 
 # using Concrete API views
 class EbookListCreateAPIView(generics.ListCreateAPIView):
-    queryset = Ebook.objects.all()
+    queryset = Ebook.objects.all().order_by("id")
     serializer_class = EbookSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+    pagination_class = CustomePagenation
 
 
 class EbookDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
