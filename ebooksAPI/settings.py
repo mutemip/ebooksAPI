@@ -40,7 +40,8 @@ INSTALLED_APPS = [
 
     'rest_framework',
 
-    'ebooks.apps.EbooksConfig'
+    'ebooks.apps.EbooksConfig',
+    'quotes.apps.QuotesConfig'
 ]
 
 MIDDLEWARE = [
