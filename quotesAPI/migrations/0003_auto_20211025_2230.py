@@ -6,7 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('quotes', '0002_alter_quote_quote_body'),
+        ('quotesAPI', '0002_alter_quote_quote_body'),
     ]
 
     operations = [
