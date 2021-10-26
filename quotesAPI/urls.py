@@ -2,7 +2,7 @@ from django.urls import path
 from .views import QuoteListCreateAPIView, QuoteDetailAPIView
 
 urlpatterns = [
-    path('quotesAPI/', QuoteListCreateAPIView.as_view(), name='quotesAPI-list'),
-    path('quotesAPI/<int:pk>/', QuoteDetailAPIView.as_view(), name='quotesAPI-details'),
+    path('quotes/', QuoteListCreateAPIView.as_view(), name='quotes-list'),
+    path('quotes/<int:pk>/', QuoteDetailAPIView.as_view(), name='quotes-details'),
 
 ]

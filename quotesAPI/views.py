@@ -1,10 +1,9 @@
 from rest_framework import generics
-from rest_framework import permissions
 
-from .serializers import QuoteSerializer
-from .permissions import IsAdminUserOrReadOnly
-from .pagenation import CustomePagenation
 from .models import Quote
+from .pagenation import CustomePagenation
+from .permissions import IsAdminUserOrReadOnly
+from .serializers import QuoteSerializer
 
 
 class QuoteListCreateAPIView(generics.ListCreateAPIView):
